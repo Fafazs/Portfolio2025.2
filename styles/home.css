@@ -19,7 +19,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.buttonNav{
+.buttonNav {
   font-size: 3rem;
   border: 2px solid #fff;
   padding: 0.5rem 1rem;
@@ -28,9 +28,9 @@
   transition: 600ms;
 }
 
-.buttonNav:hover{
+.buttonNav:hover {
   border: 2px solid white;
-  background-color:#71b7d56b ;
+  background-color: #71b7d56b;
   color: white;
   transform: scale(1.1);
   cursor: pointer;
@@ -48,7 +48,8 @@
 
 .backgroundOne {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-image: url('../data/backGround1.jfif');
@@ -60,6 +61,18 @@
 
 .contentOne {
   z-index: 1;
+  height: 100vh;
+}
+
+.imgDiv {
+  width: 16rem;
+  height: 25rem;
+  background: none;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .myImg {
@@ -67,19 +80,100 @@
   height: 19rem;
   border-radius: 100%;
   border: 8px solid rgba(0, 0, 0, 0.35);
-  margin-top: 30px;
-  margin-bottom: 30px;
   transition: 600ms;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
+  z-index: 2;
 }
 
-.myImg:hover{
+.contactDiv {
+  position: absolute;
+  opacity: 0;
+  width: 0rem;
+  height: 12rem;
+  border: 3px solid #71b7d5;
+  color: #fff;
+  transition: 0.6s;
+}
+
+.contact {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px auto;
+  display: block;
+}
+
+.contact:hover {
+  animation: balanco 0.6s ease-in-out;
+}
+
+/* Animação do tremer */
+@keyframes tremer {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-4px);
+  }
+
+  40% {
+    transform: translateX(4px);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animação suave de balanço */
+@keyframes balanco {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    transform: rotate(1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.imgDiv:hover .contactDiv {
+  opacity: 1;
+  transform: scale(1.2) translateX(11rem);
+  width: 16rem;
+}
+
+.imgDiv:hover .myImg {
   transform: scale(1.15);
   border: 8px solid #71b7d5;
 }
 
-.h1PG1{
+
+
+.h1PG1 {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
@@ -90,7 +184,7 @@
   border-radius: 25px;
 }
 
-.textPG1{
+.textPG1 {
   font-size: 1.4rem;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(6px);
@@ -112,7 +206,8 @@
 
 .backgroundTwo {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-image: url('../data/backGround2.jfif');
@@ -126,7 +221,7 @@
   z-index: 1;
 }
 
-.h1PG2{
+.h1PG2 {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
@@ -137,46 +232,84 @@
   border-radius: 15px;
 }
 
-.timeLine{
+.timeLine {
   width: 100vw;
   height: 60vh;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-bottom: 4.2rem;
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 0.5rem;
-
 }
 
-.timeBlock{
-  flex: 0 1 calc(30% - 0.5rem); /* 3 blocos por linha com espaço */
-  height: 28vh;
+.line {
+  position: fixed;   
+  top: 50%;          
+  left: 0;
+  right: 0;          
+  height: 10px;       
+  background: #000;       
+}
+
+.timeBlockUp {
+  width: 3vw;          
+  height: 3vw; 
+  margin-bottom: 5%;
   color: #fff;
-  background: rgba(255, 255, 255, 0.1); 
-  border: 1px solid black;
-  border-radius: 10px; 
-  backdrop-filter: blur(5px); 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: black;
+  border-radius: 50%;
+  transition: 1s;
+  z-index: 1;
+  
 }
 
-.timeBlock:hover{
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.timeBlockDown {
+  width: 3vw;          
+  height: 3vw; 
+  margin-top: 5%;
+  color: #fff;
+  background: black;
+  border-radius: 50%;
+  transition: 1s;
+  z-index: 1;
 }
 
-.timeBlock h2 {
-  font-size: 2rem;
+.timeBlockUp:hover {
+  transform: scale(1.15);
+  background: #fff;
+  border: 2px solid black;
+  cursor: pointer;
+}.timeBlockDown:hover{
+  transform: scale(1.15);
+  background: #fff;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.h2Up{
   color: black;
+  visibility: hidden;
+  transition: 0.6s;
 }
 
-.timeBlock h3 {
-  font-size: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+.timeBlockUp:hover .h2Up {
+   color: white;
+   transform: scale(1.15) translateY(-4.5rem);
+   visibility: visible;
+
+}
+
+.h2Down{
+  color: black;
+  visibility: hidden;
+  transition: 0.6s;
+}
+.timeBlockDown:hover .h2Down {
+   color: white;
+   transform: scale(1.15) translateY(2rem);
+   visibility: visible;
+
 }
 
 /* page Three styling */
@@ -192,10 +325,11 @@
 
 .backgroundThree {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../data/backGround3.jfif');
+  background-image: url('../data/backGround5.jpeg');
   background-size: cover;
   background-position: center;
   filter: blur(4px);
@@ -208,7 +342,7 @@
   padding: 20px;
 }
 
-.h1PG3{
+.h1PG3 {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
@@ -219,7 +353,7 @@
   border-radius: 15px;
 }
 
-.projectDiv{
+.projectDiv {
   width: 100vw;
   height: 60vh;
   border: 1px solid black;
@@ -227,32 +361,30 @@
   overflow-x: hidden;
 }
 
-.project{
-  background: rgba(1, 0, 64, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3); 
+.project {
+  background: #00254c37;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
   padding: 1rem;
-  backdrop-filter: blur(5px); 
-  color: #fff; 
+  backdrop-filter: blur(5px);
+  color: #fff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-.project:hover{
+.project:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .project h3 a {
-  color: #ffffff; 
+  color: #ffffff;
   text-decoration: none;
   font-size: 2rem;
-}
-
-.project h3 a:hover {
-  text-decoration: underline;
 }
 
 .project p {
@@ -263,4 +395,88 @@
 .project small {
   color: black;
   font-size: 1.5rem;
+}
+
+/* ---------------------- Modal ---------------------- */
+.windowOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30, 30, 30, 0.6); /* tom mais escuro e suave */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px); /* adiciona um efeito de vidro fosco */
+}
+
+.windowContent {
+  background: rgba(255, 255, 255, 0.95); /* leve transparência */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 60vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Cabeçalho */
+.sec1 {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  align-items: center;
+}
+
+.sec1 div {
+  padding: 12px 16px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.sec1 div:hover {
+  background-color: #e0e0e0;
+}
+
+.sec1 div h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #2c3e50;
+}
+
+/* Imagem */
+.sec2 {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sec2 img {
+  width: 70%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Texto */
+.sec3 {
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  overflow-y: auto;
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #444;
 }
