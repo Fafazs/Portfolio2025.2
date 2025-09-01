@@ -4,19 +4,34 @@ let level = 0;
 //API GIT HUB CALL https://api.github.com/users/Fafazs/repos
 
 const mockText = [
-    { id: '990247434', name: 'ProjetoEstacionamento', text: 'Texto do estacionamento', src: '../data/projects/estacionamento.png' },
-    { id: '987970992', name: 'Beecrowd', text: 'Texto do Beecrowd', src: '../data/projects/beecrowd.png' },
-    { id: '978627632', name: 'GodotGame2D', text: 'Texto do Godot', src: '../data/projects/godot.png' },
-    { id: '935079999', name: 'ThreejsTransformAnimation', text: 'Texto do Three.js', src: '../data/projects/threeJs.gif' },
-    { id: '917328969', name: 'RandomColorPicker', text: 'Texto do color picker', src: '../data/projects/colorpicker.png' },
-    { id: '914562486', name: 'SocialMediaProject', text: 'Texto do social media', src: '../data/projects/social.png' },
-    { id: '913538963', name: 'CypressTest', text: 'Texto do Cypress', src: '../dataprojects//cypress.png' },
-    { id: '880567183', name: 'FormLoginLogic', text: 'Texto do login', src: '../data/projects/login.png' },
-    { id: '873282972', name: 'RegisterPagetsx', text: 'Texto do register', src: '../data/projects/register.png' },
-    { id: '845284981', name: 'AulaNode', text: 'Texto do node', src: '../data/projects/node.png' },
-    { id: '794356093', name: 'Lista', text: 'Texto da lista', src: '../data/projects/lista.png' },
-    { id: '771252590', name: 'Aula6BuscaBrutaNextGen', text: 'Texto da busca', src: '../data/projects/busca.png' },
-    { id: '760955996', name: 'Aula3OnePageProject', text: 'Texto da one page', src: '../data/projects/onepage.png' },
+    { id: '990247434', name: 'ProjetoEstacionamento', text:`
+        Projeto que fiz no primeiro semestre da faculdade, o sistema de um estacionamento de shopping que ao entrar 
+        veiculos lê a plâca, gera um ticket e identifica obrigatoriamente placas com a origem de Santa Catarina , Parana
+        e Rio Grande do Sul.
+        Utilizando do local Storage para armazenar as informações necessarias é possivel renderizar os veiculos armazenados
+        numa virtualização do estacionamento no HTML. É possivel liberar a saída dos veículos ao clicar no card deles e calcular o
+        valor a ser pago pelo tempo de estadia. 
+        Feito com Javascript, Html e Css usando o VScode.
+         `,src: '../data/projects/estacionamento.png' },
+    { id: '987970992', name: 'Beecrowd', text: `
+        Aqui salvo a resolução dos problemas que ja resolucionei pela plataforma do Beecrowd, atualmente tenho resolucionado problemas
+        de javascript, mas planejo no futuro me aprofundar em outras linguagens como Java!
+        `, src: '../data/projects/beecrowd.png' },
+    { id: '978627632', name: 'GodotGame2D', text: `
+        Projeto que fiz no primeiro semestre da faculdade, consiste em um jogo de plataforma 2d, foi minha primeira experiência com Godot
+        e me diverti muito aprendendo a mecher na plataforma, tive primeiro contato com GDScript e fiz plataformas
+        que se movem, comandos do player, objeto de camera2D, gravidade, morte ao cair do mapa e ao enconstar em inimigos ambulantes pelo mapa,
+        moedas coletáveis e uma pequena interface
+        `, src: '../data/projects/godot.png' },
+    { id: '935079999', name: 'ThreejsTransformAnimation', text: `
+        Inicindo meus estudos na biblioteca que utiliza webGl para fazer a magia 3D acontecer no javascript, Three.js e Vite.
+        Fiz alguns objetos 3D e mechi em seus posicionamentos e tamanhos, adicionei-os em um grupo e modifiquei os valores de rotation
+        no eixo X e Y, por fim adicionei a cena para renderizar e consegui um efeito bem legal!
+        `, src: '../data/projects/threeJs.gif' },
+    { id: '917328969', name: 'RandomColorPicker', text: `
+        Projeto que fiz para praticar um pouco do básico de React native, construi um gerador de cor aleatória que 
+        retorna o seu Código hex e atualiza a propiedade de backgroundColor da home para mostra-la
+        `, src: '../data/projects/colorPicker.png' },
 ];
 
 function homePage() {
@@ -127,27 +142,27 @@ function journey() {
     //1st
     const oct2023 = document.createElement('div');
     const h2first = document.createElement('h2');
-    const h3First = document.createElement('h3');
+    const pFirst = document.createElement('p');
     //2nd
     const jan2024 = document.createElement('div');
     const h2Second = document.createElement('h2');
-    const h3Second = document.createElement('h3');
+    const pSecond = document.createElement('p');
     //3rd
     const jan2025 = document.createElement('div');
     const h2Third = document.createElement('h2');
-    const h3Third = document.createElement('h3');
+    const pThird = document.createElement('p');
     //4th
     const fev2025 = document.createElement('div');
     const h2Fourth = document.createElement('h2');
-    const h3Fourth = document.createElement('h3');
+    const pFourth = document.createElement('p');
     //5th
     const junho2025 = document.createElement('div');
     const h2Fifth = document.createElement('h2');
-    const h3Fifth = document.createElement('h3');
+    const pFifth = document.createElement('p');
     //6th
     const atualmente = document.createElement('div');
     const h2Sixth = document.createElement('h2');
-    const h3Sixth = document.createElement('h3');
+    const pSixth = document.createElement('p');
 
 
     //Editing Elements Content
@@ -158,12 +173,21 @@ function journey() {
     h2Fourth.innerHTML = 'Fevereiro 2025';
     h2Fifth.innerHTML = 'Junho 2025';
     h2Sixth.innerHTML = 'Atualmente';
-    h3First.innerHTML = 'Decidi trocar de Área de atuação e conheci a programação!'
-    h3Second.innerHTML = 'Entrei para o curso de Fullstack da Digital College!'
-    h3Third.innerHTML = 'Finalizei o curso e aprendi muito na jornada!'
-    h3Fourth.innerHTML = 'Ingressei na Unifor buscando fazer ADS, Analise e Desenvolvimento de Sistemas!'
-    h3Fifth.innerHTML = 'Finalizei o primeiro Semestre aprovado em todas as cadeiras!'
-    h3Sixth.innerHTML = 'Cursando o segundo Semestre e buscando por vagas de estágios!'
+    pFirst.innerHTML = `Troquei de área de estudo e atuação profissional, ao conhecer colegas da área da tecnologia comecei a estudar programação.
+                         O primeiro contato que tive programando foi no app do Processing e acompanhando pela internet aulas do The Coding Train! 
+                         `;
+    pSecond.innerHTML = `Unindo o útil ao agradável, decidi que iria realmente entrar na área de cabeça e por recomendação de amigos entrei no curso
+                          de programação da Digital College, entrando no caminho de aprendizagem do desenvolvimento Fullstack`
+    pThird.innerHTML = `Passei um ano nessa caminhada e me entreguei por completo aos estudos, com certeza fui muito bem orientado pelo professor Italo Adler
+                          na turma noturna fullStack35. Aprendi o basico para virar um programador no futuro: Html, Css, Javascript, Git,
+                          node, banco de dados relacionais e o principal a autonomia de resolver problemas e estar sempre buscando o próximo passo!  
+                          `;
+    pFourth.innerHTML = `Ainda em busca do próximo passo, decidi entrar para o curso de Analise e Desenvolvimento de Sistemas na Unifor em Fortaleza,
+                          ingressei no semestre com um tempo de atraso então preciso recuperar meu tempo de estudo, mão na massa!`
+    pFifth.innerHTML = `Finalizei o primeiro Semestre aprovado em todas as cadeiras, o trabalho duro realmente valeu a pena!
+                         `
+    pSixth.innerHTML = `Atualmente me encontro cursando o segundo semestre de ADS e estou a procura de experiência profissional no mercado de
+                          trabalho, busco expandindo meus conhecimentos e não planejo parar por aqui!`
 
     //Creating nav
     const navDiv = document.createElement('div');
@@ -187,22 +211,22 @@ function journey() {
     timeLine.appendChild(line);
     timeLine.append(oct2023);
     oct2023.append(h2first);
-    //oct2023.append(h3First);
+    oct2023.append(pFirst);
     timeLine.append(jan2024);
     jan2024.append(h2Second);
-    //jan2024.append(h3Second);
+    jan2024.append(pSecond);
     timeLine.append(jan2025);
     jan2025.append(h2Third);
-    //jan2025.append(h3Third);
+    jan2025.append(pThird);
     timeLine.append(fev2025);
     fev2025.append(h2Fourth);
-    //fev2025.append(h3Fourth);
+    fev2025.append(pFourth);
     timeLine.append(junho2025);
     junho2025.append(h2Fifth);
-    //junho2025.append(h3Fifth);
+    junho2025.append(pFifth);
     timeLine.append(atualmente);
     atualmente.append(h2Sixth);
-    //atualmente.append(h3Sixth);
+    atualmente.append(pSixth);
     content.appendChild(navDiv);
     navDiv.appendChild(nav);
     nav.appendChild(buttonBefore);
@@ -268,9 +292,7 @@ async function projects() {
         projectEl.id = String(repo.id);
 
         const title = document.createElement('h3');
-        const link = document.createElement('a');
-        link.textContent = repo.name;
-        title.appendChild(link);
+        title.innerHTML = repo.name;
 
         const small = document.createElement('small');
         small.textContent = `Linguagem: ${repo.language || 'Não informada'}`;
