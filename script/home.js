@@ -4,33 +4,34 @@ let level = 0;
 //API GIT HUB CALL https://api.github.com/users/Fafazs/repos
 
 const mockText = [
-    { id: '990247434', name: 'ProjetoEstacionamento', text:`
-        Projeto que fiz no primeiro semestre da faculdade, o sistema de um estacionamento de shopping que ao entrar 
-        veiculos lê a plâca, gera um ticket e identifica obrigatoriamente placas com a origem de Santa Catarina , Parana
-        e Rio Grande do Sul.
-        Utilizando do local Storage para armazenar as informações necessarias é possivel renderizar os veiculos armazenados
-        numa virtualização do estacionamento no HTML. É possivel liberar a saída dos veículos ao clicar no card deles e calcular o
-        valor a ser pago pelo tempo de estadia. 
-        Feito com Javascript, Html e Css usando o VScode.
-         `,src: '../data/projects/estacionamento.png' },
+    { id: '990247434', name: 'ProjetoEstacionamento', text: `
+        Sistema de estacionamento desenvolvido no primeiro semestre da faculdade. 
+        O projeto realiza leitura de placas, gera tickets e identifica veículos com origem nos estados do Sul (SC, PR, RS). 
+        Utiliza LocalStorage para persistência dos dados e renderiza em tempo real os veículos no HTML. 
+        Inclui cálculo automático do valor da estadia e liberação da saída via interface. 
+        Tecnologias: JavaScript, HTML, CSS (VSCode).
+         `, src: '../data/projects/estacionamento.png' },
     { id: '987970992', name: 'Beecrowd', text: `
-        Aqui salvo a resolução dos problemas que ja resolucionei pela plataforma do Beecrowd, atualmente tenho resolucionado problemas
-        de javascript, mas planejo no futuro me aprofundar em outras linguagens como Java!
+        Repositório de soluções para problemas da plataforma Beecrowd. 
+        Atualmente com foco em desafios de JavaScript, com planos de expandir para outras linguagens como Java. 
+        Demonstra raciocínio lógico, boas práticas e evolução contínua na resolução de algoritmos.
         `, src: '../data/projects/beecrowd.png' },
     { id: '978627632', name: 'GodotGame2D', text: `
-        Projeto que fiz no primeiro semestre da faculdade, consiste em um jogo de plataforma 2d, foi minha primeira experiência com Godot
-        e me diverti muito aprendendo a mecher na plataforma, tive primeiro contato com GDScript e fiz plataformas
-        que se movem, comandos do player, objeto de camera2D, gravidade, morte ao cair do mapa e ao enconstar em inimigos ambulantes pelo mapa,
-        moedas coletáveis e uma pequena interface
+        Jogo 2D desenvolvido no primeiro semestre da faculdade como introdução ao engine Godot. 
+        Implementação de plataformas móveis, comandos de player, câmera dinâmica, sistema de gravidade, colisões com inimigos, 
+        coleta de moedas e interface básica. 
+        Tecnologias: Godot Engine, GDScript.
         `, src: '../data/projects/godot.png' },
     { id: '935079999', name: 'ThreejsTransformAnimation', text: `
-        Inicindo meus estudos na biblioteca que utiliza webGl para fazer a magia 3D acontecer no javascript, Three.js e Vite.
-        Fiz alguns objetos 3D e mechi em seus posicionamentos e tamanhos, adicionei-os em um grupo e modifiquei os valores de rotation
-        no eixo X e Y, por fim adicionei a cena para renderizar e consegui um efeito bem legal!
+        Projeto inicial com a biblioteca Three.js utilizando WebGL e Vite. 
+        Criação de objetos 3D, manipulação de posicionamento e escala, agrupamento de elementos e aplicação de animações de rotação nos eixos X e Y. 
+        Resultado: cena 3D interativa renderizada no navegador. 
+        Tecnologias: Three.js, JavaScript, Vite.
         `, src: '../data/projects/threeJs.gif' },
     { id: '917328969', name: 'RandomColorPicker', text: `
-        Projeto que fiz para praticar um pouco do básico de React native, construi um gerador de cor aleatória que 
-        retorna o seu Código hex e atualiza a propiedade de backgroundColor da home para mostra-la
+        Aplicativo simples em React Native para prática de conceitos iniciais. 
+        Gera cores aleatórias, exibe o código HEX e altera dinamicamente o background da interface. 
+        Tecnologias: React Native, JavaScript.
         `, src: '../data/projects/colorPicker.png' },
 ];
 
@@ -138,56 +139,49 @@ function journey() {
     const content = document.createElement('div');
     const H1 = document.createElement('h1');
     const timeLine = document.createElement('div');
+    const p = document.createElement('p');
     const line = document.createElement('div');
     //1st
-    const oct2023 = document.createElement('div');
-    const h2first = document.createElement('h2');
-    const pFirst = document.createElement('p');
+    const div1 = document.createElement('div');
+    const div1H2 = document.createElement('h2');
+    const div1P = document.createElement('p');
     //2nd
-    const jan2024 = document.createElement('div');
-    const h2Second = document.createElement('h2');
-    const pSecond = document.createElement('p');
+    const div2 = document.createElement('div');
+    const div2H2 = document.createElement('h2');
+    const div2P = document.createElement('p');
+    const div2Img = document.createElement('img');
     //3rd
-    const jan2025 = document.createElement('div');
-    const h2Third = document.createElement('h2');
-    const pThird = document.createElement('p');
+    const div3 = document.createElement('div');
+    const div3H2 = document.createElement('h2');
+    const div3P = document.createElement('p');
+    const div3Img = document.createElement('img');
     //4th
-    const fev2025 = document.createElement('div');
-    const h2Fourth = document.createElement('h2');
-    const pFourth = document.createElement('p');
-    //5th
-    const junho2025 = document.createElement('div');
-    const h2Fifth = document.createElement('h2');
-    const pFifth = document.createElement('p');
-    //6th
-    const atualmente = document.createElement('div');
-    const h2Sixth = document.createElement('h2');
-    const pSixth = document.createElement('p');
+    const div4 = document.createElement('div');
+    const div4H2 = document.createElement('h2');
+    const div4P = document.createElement('p');
 
 
     //Editing Elements Content
     H1.innerHTML = 'Minha Jornada!';
-    h2first.innerHTML = "Outubro 2023";
-    h2Second.innerHTML = 'Janeiro 2024';
-    h2Third.innerHTML = 'Janeiro 2025';
-    h2Fourth.innerHTML = 'Fevereiro 2025';
-    h2Fifth.innerHTML = 'Junho 2025';
-    h2Sixth.innerHTML = 'Atualmente';
-    pFirst.innerHTML = `Troquei de área de estudo e atuação profissional, ao conhecer colegas da área da tecnologia comecei a estudar programação.
-                         O primeiro contato que tive programando foi no app do Processing e acompanhando pela internet aulas do The Coding Train! 
+    p.innerHTML = '- TimeLine -<br> passe o mouse nos blocos para saber mais!';
+    div1H2.innerHTML = "Primeiro contato com programação";
+    div2H2.innerHTML = 'Formação em Desenvolvimento Fullstack';
+    div3H2.innerHTML = 'Graduação em Análise e Desenvolvimento de Sistemas';
+    div4H2.innerHTML = 'Dias atuais e futuro';
+    div1P.innerHTML = `Conheci a programação através do Processing e das aulas do The Coding Train, o que despertou meu interesse em seguir carreira na área de tecnologia. 
                          `;
-    pSecond.innerHTML = `Unindo o útil ao agradável, decidi que iria realmente entrar na área de cabeça e por recomendação de amigos entrei no curso
-                          de programação da Digital College, entrando no caminho de aprendizagem do desenvolvimento Fullstack`
-    pThird.innerHTML = `Passei um ano nessa caminhada e me entreguei por completo aos estudos, com certeza fui muito bem orientado pelo professor Italo Adler
-                          na turma noturna fullStack35. Aprendi o basico para virar um programador no futuro: Html, Css, Javascript, Git,
-                          node, banco de dados relacionais e o principal a autonomia de resolver problemas e estar sempre buscando o próximo passo!  
-                          `;
-    pFourth.innerHTML = `Ainda em busca do próximo passo, decidi entrar para o curso de Analise e Desenvolvimento de Sistemas na Unifor em Fortaleza,
-                          ingressei no semestre com um tempo de atraso então preciso recuperar meu tempo de estudo, mão na massa!`
-    pFifth.innerHTML = `Finalizei o primeiro Semestre aprovado em todas as cadeiras, o trabalho duro realmente valeu a pena!
-                         `
-    pSixth.innerHTML = `Atualmente me encontro cursando o segundo semestre de ADS e estou a procura de experiência profissional no mercado de
-                          trabalho, busco expandindo meus conhecimentos e não planejo parar por aqui!`
+    div2P.innerHTML = `Participei de um curso intensivo de desenvolvimento Fullstack pela Digital College com duração de 1 ano, onde aprendi fundamentos essenciais de HTML, CSS, JavaScript, React, Git, Node.js e SQL.
+                         Durante esse período, desenvolvi projetos práticos e adquiri autonomia para resolver problemas de forma independente no Visual Studio Code.`;
+    div2Img.src = '../data/digitalCollege.png';
+    div2Img.alt = 'DigitalCollegeCertificate';
+    
+    div3P.innerHTML = `Ingressei no curso presencial de ADS na Universidade de Fortaleza (Unifor), onde concluí o primeiro semestre com aprovação em todas as disciplinas obrigatórias.
+                         Esse período consolidou minha disciplina de estudo, capacidade de adaptação e interação com outras IDE's.
+                         `;
+    div3Img.src = '../data/uniforHistorico.png';
+    div3Img.alt = 'UniforHistorico';
+    div4P.innerHTML = `Atualmente curso o 2º semestre de ADS e continuo expandindo meus conhecimentos por meio de projetos pessoais e acadêmicos. Meu objetivo é conquistar uma oportunidade de estágio em desenvolvimento web (frontend, backend ou fullstack)
+                         para aplicar na prática as habilidades que venho desenvolvendo e ganhar experiência no mercado de tecnologia.`;
 
     //Creating nav
     const navDiv = document.createElement('div');
@@ -209,24 +203,20 @@ function journey() {
     content.appendChild(H1);
     content.appendChild(timeLine);
     timeLine.appendChild(line);
-    timeLine.append(oct2023);
-    oct2023.append(h2first);
-    oct2023.append(pFirst);
-    timeLine.append(jan2024);
-    jan2024.append(h2Second);
-    jan2024.append(pSecond);
-    timeLine.append(jan2025);
-    jan2025.append(h2Third);
-    jan2025.append(pThird);
-    timeLine.append(fev2025);
-    fev2025.append(h2Fourth);
-    fev2025.append(pFourth);
-    timeLine.append(junho2025);
-    junho2025.append(h2Fifth);
-    junho2025.append(pFifth);
-    timeLine.append(atualmente);
-    atualmente.append(h2Sixth);
-    atualmente.append(pSixth);
+    timeLine.append(div1);
+    div1.append(div1H2);
+    div1.append(div1P);
+    timeLine.append(div2);
+    div2.append(div2H2);
+    div2.append(div2P);
+    //div2.append(div2Img);
+    timeLine.append(div3);
+    div3.append(div3H2);
+    div3.append(div3P);
+    //div3.append(div3Img);
+    timeLine.append(div4);
+    div4.append(div4H2);
+    div4.append(div4P);
     content.appendChild(navDiv);
     navDiv.appendChild(nav);
     nav.appendChild(buttonBefore);
@@ -239,18 +229,14 @@ function journey() {
     H1.classList.add('h1PG2');
     timeLine.classList.add('timeLine');
     line.classList.add('line');
-    oct2023.classList.add('timeBlockUp');
-    h2first.classList.add('h2Up');
-    jan2024.classList.add('timeBlockDown');
-    h2Second.classList.add('h2Down');
-    jan2025.classList.add('timeBlockUp');
-    h2Third.classList.add('h2Up');
-    fev2025.classList.add('timeBlockDown');
-    h2Fourth.classList.add('h2Down');
-    junho2025.classList.add('timeBlockUp');
-    h2Fifth.classList.add('h2Up');
-    atualmente.classList.add('timeBlockDown');
-    h2Sixth.classList.add('h2Down');
+    div1.classList.add('timeBlockUp');
+    div1H2.classList.add('h2Up');
+    div2.classList.add('timeBlockDown');
+    div2H2.classList.add('h2Down');
+    div3.classList.add('timeBlockUp');
+    div3H2.classList.add('h2Up');
+    div4.classList.add('timeBlockDown');
+    div4H2.classList.add('h2Down');
     navDiv.classList.add('divNavG');
     nav.classList.add('navG');
     buttonBefore.classList.add('buttonNav');
@@ -279,12 +265,15 @@ async function projects() {
     const content = document.createElement('div');
     const H1 = document.createElement('h1');
     const projects = document.createElement('div');
+    const divImg = document.createElement('div');
     const languages = document.createElement('img');
+    const stats = document.createElement('img');
 
     //Editing Elements Content
 
     H1.innerHTML = 'Meus Projetos!';
     languages.src = 'https://github-readme-stats.vercel.app/api/top-langs/?username=Fafazs&layout=compact&langs_count=6&theme=radical';
+    stats.src = 'https://github-readme-stats.vercel.app/api?username=Fafazs&show_icons=true&theme=radical&count_private=true';
 
     repos.forEach(repo => {
         const projectEl = document.createElement('div');
@@ -327,7 +316,9 @@ async function projects() {
     home.appendChild(backGround);
     home.appendChild(content);
     content.appendChild(H1);
-    content.appendChild(languages);
+    content.appendChild(divImg);
+    divImg.appendChild(stats);
+    divImg.appendChild(languages);
     content.appendChild(projects);
     content.appendChild(navDiv);
     navDiv.appendChild(nav);
@@ -339,6 +330,7 @@ async function projects() {
     backGround.classList.add('backgroundThree');
     content.classList.add('.contentThree');
     H1.classList.add('h1PG3');
+    divImg.classList.add('divImage');
     projects.classList.add('projectDiv');
     navDiv.classList.add('divNavG');
     nav.classList.add('navG');
@@ -347,8 +339,6 @@ async function projects() {
 }
 
 function createWindow(repo, parentEl) {
-    console.log(parentEl);
-
     //creating elements
     const overlay = document.createElement('div');
     const modal = document.createElement('div');
@@ -357,23 +347,24 @@ function createWindow(repo, parentEl) {
     const part2 = document.createElement('div');
     const closeBtn = document.createElement('button');
     const downLoadbtn = document.createElement('button');
+    const copyBtn = document.createElement('button');
     const sec2 = document.createElement('div');
     const sec3 = document.createElement('div');
 
-    //content
+    //div content
     part1.innerHTML = `
       <h2>${repo.name}</h2>
       <small>${repo.language}</small>
     `;
 
     closeBtn.textContent = 'X';
-    downLoadbtn.textContent = 'L';
+    downLoadbtn.innerHTML = `<img src= "../data/dowload.png" > `;
+    copyBtn.textContent = 'Copy Link';
 
     // 🔎 Encontra o mock correto pelo ID
     const mockMatch = mockText.find(item => item.id === parentEl.id);
 
     // sec2 => imagem personalizada
-
     sec2.innerHTML = `
         <img src="${mockMatch ? mockMatch.src : '../data/notFound.png'}" ></img>
         `;
@@ -398,6 +389,7 @@ function createWindow(repo, parentEl) {
     sec1.appendChild(part2);
     part2.appendChild(downLoadbtn);
     part2.appendChild(closeBtn);
+    part2.appendChild(copyBtn);
     modal.appendChild(sec2);
     modal.appendChild(sec3);
 
