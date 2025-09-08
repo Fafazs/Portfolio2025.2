@@ -101,9 +101,10 @@
 
 .imgDiv h3 {
   color: var(--text-light);
-  margin: 0;
+  margin-right: 1rem;
   font-size: 2rem;
-  transition: 0.6s ease-in-out
+  transition: 0.6s ease-in-out;
+  will-change: transform;
 }
 
 .myImg {
