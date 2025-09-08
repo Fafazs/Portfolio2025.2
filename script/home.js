@@ -4,35 +4,45 @@ let level = 0;
 //API GIT HUB CALL https://api.github.com/users/Fafazs/repos
 
 const mockText = [
-    { id: '990247434', name: 'ProjetoEstacionamento', text: `
+    {
+        id: '990247434', name: 'ProjetoEstacionamento', text: `
         Sistema de estacionamento desenvolvido no primeiro semestre da faculdade. 
         O projeto realiza leitura de placas, gera tickets e identifica veículos com origem nos estados do Sul (SC, PR, RS). 
         Utiliza LocalStorage para persistência dos dados e renderiza em tempo real os veículos no HTML. 
         Inclui cálculo automático do valor da estadia e liberação da saída via interface. 
         Tecnologias: JavaScript, HTML, CSS (VSCode).
-         `, src: '../data/projects/estacionamento.png' },
-    { id: '987970992', name: 'Beecrowd', text: `
+         `, src: '../data/projects/estacionamento.png'
+    },
+    {
+        id: '987970992', name: 'Beecrowd', text: `
         Repositório de soluções para problemas da plataforma Beecrowd. 
         Atualmente com foco em desafios de JavaScript, com planos de expandir para outras linguagens como Java. 
         Demonstra raciocínio lógico, boas práticas e evolução contínua na resolução de algoritmos.
-        `, src: '../data/projects/beecrowd.png' },
-    { id: '978627632', name: 'GodotGame2D', text: `
+        `, src: '../data/projects/beecrowd.png'
+    },
+    {
+        id: '978627632', name: 'GodotGame2D', text: `
         Jogo 2D desenvolvido no primeiro semestre da faculdade como introdução ao engine Godot. 
         Implementação de plataformas móveis, comandos de player, câmera dinâmica, sistema de gravidade, colisões com inimigos, 
         coleta de moedas e interface básica. 
         Tecnologias: Godot Engine, GDScript.
-        `, src: '../data/projects/godot.png' },
-    { id: '935079999', name: 'ThreejsTransformAnimation', text: `
+        `, src: '../data/projects/godot.png'
+    },
+    {
+        id: '935079999', name: 'ThreejsTransformAnimation', text: `
         Projeto inicial com a biblioteca Three.js utilizando WebGL e Vite. 
         Criação de objetos 3D, manipulação de posicionamento e escala, agrupamento de elementos e aplicação de animações de rotação nos eixos X e Y. 
         Resultado: cena 3D interativa renderizada no navegador. 
         Tecnologias: Three.js, JavaScript, Vite.
-        `, src: '../data/projects/threeJs.gif' },
-    { id: '917328969', name: 'RandomColorPicker', text: `
+        `, src: '../data/projects/threeJs.gif'
+    },
+    {
+        id: '917328969', name: 'RandomColorPicker', text: `
         Aplicativo simples em React Native para prática de conceitos iniciais. 
         Gera cores aleatórias, exibe o código HEX e altera dinamicamente o background da interface. 
         Tecnologias: React Native, JavaScript.
-        `, src: '../data/projects/colorPicker.png' },
+        `, src: '../data/projects/colorPicker.png'
+    },
 ];
 
 function homePage() {
@@ -174,7 +184,7 @@ function journey() {
                          Durante esse período, desenvolvi projetos práticos e adquiri autonomia para resolver problemas de forma independente no Visual Studio Code.`;
     div2Img.src = '../data/digitalCollege.png';
     div2Img.alt = 'DigitalCollegeCertificate';
-    
+
     div3P.innerHTML = `Ingressei no curso presencial de ADS na Universidade de Fortaleza (Unifor), onde concluí o primeiro semestre com aprovação em todas as disciplinas obrigatórias.
                          Esse período consolidou minha disciplina de estudo, capacidade de adaptação e interação com outras IDE's.
                          `;
@@ -359,7 +369,7 @@ function createWindow(repo, parentEl) {
 
     closeBtn.textContent = 'X';
     downLoadbtn.innerHTML = `<img src= "../data/dowload.png" > `;
-    copyBtn.textContent = 'Copy Link';
+    copyBtn.innerHTML = '<img src= "../data/copiar.png" >';
 
     // 🔎 Encontra o mock correto pelo ID
     const mockMatch = mockText.find(item => item.id === parentEl.id);
@@ -387,11 +397,46 @@ function createWindow(repo, parentEl) {
     modal.appendChild(sec1);
     sec1.appendChild(part1);
     sec1.appendChild(part2);
-    part2.appendChild(downLoadbtn);
     part2.appendChild(closeBtn);
+    part2.appendChild(downLoadbtn);
     part2.appendChild(copyBtn);
     modal.appendChild(sec2);
     modal.appendChild(sec3);
+
+    //download method
+    downLoadbtn.addEventListener('click', () => {
+        const confirmDownload = confirm(
+            "Deseja baixar o arquivo ZIP deste repositório?\nO download será feito diretamente do GitHub."
+        );
+        if (confirmDownload) {
+            const link = document.createElement('a');
+            // URL para baixar o ZIP do repositório
+            link.href = `${repo.html_url}/archive/refs/heads/${repo.default_branch}.zip`;
+            link.download = `${repo.name}.zip`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    });
+
+    //copy method
+    copyBtn.addEventListener('click', () => {
+
+        navigator.clipboard.writeText(repo.html_url)
+            .then(() => {
+                alert("Link copiado com sucesso!");
+            })
+            .catch(err => {
+                console.error("Erro ao copiar:", err);
+            });
+
+        copyBtn.innerHTML = '<img src= "../data/checked.png" >';
+        copyBtn.disabled = true;
+        setTimeout(() => {
+            copyBtn.innerHTML = '<img src= "../data/copiar.png" >';
+            copyBtn.disabled = false;
+        }, 20000);
+    })
 
     //close methods
     closeBtn.addEventListener('click', () => overlay.remove());
