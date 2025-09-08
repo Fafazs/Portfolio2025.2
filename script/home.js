@@ -70,6 +70,7 @@ function greetings() {
     const imgDiv = document.createElement('div');
     const img = document.createElement('img');
     const contactDiv = document.createElement('div');
+    const h3 = document.createElement('h3');
     const contactH2 = document.createElement('h2');
     const contactInsta = document.createElement('a');
     const contactLink = document.createElement('a');
@@ -80,6 +81,7 @@ function greetings() {
     //Editing Elements Content
     H1.innerHTML = 'Olá, sou o Fabrício!';
     img.src = '../data/portfolioImg2.jfif';
+    h3.innerHTML = 'Entre em contato aqui!';
     contactH2.innerHTML = 'Contatos';
     contactInsta.href = 'https://www.instagram.com/fnascimento_77/';
     contactInsta.innerHTML = '<img class="contact" src="../data/instagram.png">';
@@ -110,6 +112,7 @@ function greetings() {
     content.appendChild(imgDiv);
     imgDiv.appendChild(img);
     imgDiv.appendChild(contactDiv);
+    imgDiv.appendChild(h3);
     contactDiv.appendChild(contactH2);
     contactDiv.appendChild(contactInsta);
     contactDiv.appendChild(contactLink);
@@ -180,17 +183,17 @@ function journey() {
     div4H2.innerHTML = 'Dias atuais e futuro';
     div1P.innerHTML = `Conheci a programação através do Processing e das aulas do The Coding Train, o que despertou meu interesse em seguir carreira na área de tecnologia. 
                          `;
-    div2P.innerHTML = `Participei de um curso intensivo de desenvolvimento Fullstack pela Digital College com duração de 1 ano, onde aprendi fundamentos essenciais de HTML, CSS, JavaScript, React, Git, Node.js e SQL.
+    div2P.innerHTML = `Participei de um curso intensivo de desenvolvimento Fullstack pela Digital College com duração de 1 ano, onde aprendi fundamentos essenciais de HTML, CSS, JavaScript, React, Git, Node.js e SQL.<br><br>
                          Durante esse período, desenvolvi projetos práticos e adquiri autonomia para resolver problemas de forma independente no Visual Studio Code.`;
     div2Img.src = '../data/digitalCollege.png';
     div2Img.alt = 'DigitalCollegeCertificate';
 
-    div3P.innerHTML = `Ingressei no curso presencial de ADS na Universidade de Fortaleza (Unifor), onde concluí o primeiro semestre com aprovação em todas as disciplinas obrigatórias.
+    div3P.innerHTML = `Ingressei no curso presencial de ADS na Universidade de Fortaleza (Unifor), onde concluí o primeiro semestre com aprovação em todas as disciplinas obrigatórias.<br><br>
                          Esse período consolidou minha disciplina de estudo, capacidade de adaptação e interação com outras IDE's.
                          `;
     div3Img.src = '../data/uniforHistorico.png';
     div3Img.alt = 'UniforHistorico';
-    div4P.innerHTML = `Atualmente curso o 2º semestre de ADS e continuo expandindo meus conhecimentos por meio de projetos pessoais e acadêmicos. Meu objetivo é conquistar uma oportunidade de estágio em desenvolvimento web (frontend, backend ou fullstack)
+    div4P.innerHTML = `Atualmente curso o 2º semestre de ADS e continuo expandindo meus conhecimentos por meio de projetos pessoais e acadêmicos.<br><br> Meu objetivo é conquistar uma oportunidade de estágio em desenvolvimento web (frontend, backend ou fullstack)
                          para aplicar na prática as habilidades que venho desenvolvendo e ganhar experiência no mercado de tecnologia.`;
 
     //Creating nav
