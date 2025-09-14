@@ -1,10 +1,9 @@
 /* ===================== Global Variables ===================== */
 :root {
   --primary: #72b7d5;
-  --background-dark: #00254c37;
+  --background-dark: rgba(0, 0, 0, 0.35);
   --text-light: #fff;
   --modal-bg: rgba(255, 255, 255, 0.95);
-  --nav-bg: rgba(0, 0, 0, 0.35);
 }
 
 /* ===================== Titles and Texts ===================== */
@@ -13,7 +12,7 @@
 .h1PG3 {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text-light);
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--background-dark);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   font-size: 4rem;
@@ -34,7 +33,7 @@
 }
 
 .navG {
-  background: var(--nav-bg);
+  background: var(--background-dark);
   border-radius: 20px;
   padding: 0.5rem 1rem;
   backdrop-filter: blur(10px);
@@ -111,7 +110,7 @@
   width: 16rem;
   height: 19rem;
   border-radius: 100%;
-  border: 8px solid rgba(0, 0, 0, 0.35);
+  border: 8px solid var(--background-dark);
   transition: 600ms;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
@@ -163,6 +162,7 @@
 
 .textPG1 {
   font-size: 1.4rem;
+  padding: 10px;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(6px);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
@@ -234,8 +234,8 @@
   flex-direction: column;
   justify-content: center;
   margin-bottom: 10%;
-  color: Black;
-  background: var(--modal-bg);
+  color: white;
+  background: var(--background-dark);
   border-radius: 5%;
   transition: 0.8s;
   z-index: 1;
@@ -249,7 +249,6 @@
   height: 9vw;
   width: 15vw;
   display: block;
-  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
@@ -291,8 +290,8 @@
   text-align: center;
   margin-top: 10%;
   padding: 10px;
-  color: Black;
-  background: var(--modal-bg);
+  color: white;
+  background: var(--background-dark);
   border-radius: 5%;
   transition: 0.8s;
   z-index: 1;
@@ -314,7 +313,6 @@
   display: block;
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  color: black;
 }
 
 .timeBlockDown:hover .h2Down {
@@ -337,7 +335,7 @@
 
 .timeBlockDown:hover p {
   display: block;
-  color: black;
+  color: white;
 }
 
 /* ===================== Página 3 ===================== */
@@ -457,7 +455,8 @@
 }
 
 .windowContent {
-  background: var(--modal-bg);
+  color: white;
+  background: rgba(0, 0, 0, 0.514);
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   width: 60vh;
@@ -466,7 +465,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   font-family: 'Segoe UI', sans-serif;
-  color: #333;
 }
 
 /* Cabeçalho */
@@ -488,7 +486,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #f0f0f0;
+  color: white;
+  background: var(--background-dark);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
@@ -507,13 +506,12 @@
 
 
 .sec1 div:hover {
-  background-color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.644);
 }
 
 .sec1 div h2 {
   margin: 0;
   font-size: 1.2em;
-  color: #2c3e50;
 }
 
 .sec1 button {
@@ -529,8 +527,8 @@
 
 .sec1 button:hover,
 .sec1 button:focus {
-  background-color: #719cfa83;
-  outline: 2px solid var(--primary);
+  background-color: #c3d5fc83;
+  outline: 2px solid black;
 }
 
 .sec1 button img {
@@ -567,7 +565,7 @@
   letter-spacing: 2px;
   word-spacing: 2px;
   line-height: 1.2;
-  color: #444;
+  color: white;
   font-size: large;
 }
 

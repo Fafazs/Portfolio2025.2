@@ -1,8 +1,6 @@
 const home = document.getElementById('home');
 let level = 0;
 
-//API GIT HUB CALL https://api.github.com/users/Fafazs/repos
-
 const mockText = [
     {
         id: '990247434', name: 'ProjetoEstacionamento', text: `
